@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}search_form{% endblock %}
+
+{% block content %}
+	{% if errors %}
+		<ul>
+			{% for error in errors %}
+				<li>{{error}}</li>
+			{% endfor %}
+		</ul>
+		
+	{% endif %}
+    <form action="/contact/" method="post">
+	    <p>Subject: <input type="text" name="subject"></p>
+	    <p>Your e-mail (optional):<input type="text" value="email"></p>
+	    <p>Message:<textarea name="message" rows="10" cols="50"></textarea></p>
+	    <input type="submit" vlaue="Submit">
+    </form>
+{% endblock %}
